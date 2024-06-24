@@ -326,7 +326,7 @@ async function loadHeavyModelInBackground() {
   let speed;
   let timeRemaining;
 
-  gltf = await loader.loadAsync('https://festive-ardinghelli.185-118-57-122.plesk.page/media/VictoriaEugenia.glb',
+  gltf = await loader.loadAsync('media/VictoriaEugenia.glb',
     (xhr) => { // onProgress callback 
       let loaded = xhr.loaded; // get the number of bytes transferred so far
       let total = xhr.total; // get the total number of bytes to be transferred
@@ -880,43 +880,8 @@ async function ScrollToGetBetterFeeling(unidades) {
     console.error("Hubo un error al hacer scroll:", error);
   }
 }
-
+  // IMPORTANTE
 window.onload = function () {
-  anim = bodymovin.loadAnimation({
-    container: document.getElementById('animated-svg12'),
-    renderer: 'svg',
-    loop: false,
-    autoplay: true,
-    path: '/media/LoadAnim.json'
-
-
-  })
-  anim.addEventListener('DOMLoaded', function () {
-    duracionEnSegundos = anim.totalFrames / anim.frameRate;
-    console.log("Duración de la animación:", duracionEnSegundos, "segundos");
-    console.log("Tiempo total transcurrido desde el inicio de la descarga:", tiempoTranscurrido, "segundos");
-   
-    // Aquí puedes hacer otras acciones que requieran que la animación esté cargada.
-  });
-
-
-  anim2 = bodymovin.loadAnimation({
-    container: document.getElementById('animated-svg13'),
-    renderer: 'svg',
-    loop: false,
-    autoplay: true,
-    path: '/media/LoadIndicator.json',
-
-  })
-
-  anim2.addEventListener('DOMLoaded', function () {
-    let ultimoFrame = anim2.firstFrame;
-    let duracionEnSegundos = anim2.totalFrames / anim2.frameRate;
-    console.log("Duración de la animación2:", duracionEnSegundos, "segundos2");
-
-
-    // Aquí puedes hacer otras acciones que requieran que la animación esté cargada.
-  });
 
   animation = gsap.to(["#image1", "#image2", "#image3"], {
     x: -500,
@@ -949,7 +914,7 @@ window.onload = function () {
   document.getElementById("myBtn").addEventListener("click", () => {
     // Пауза текущей анимации
     // Здесь добавьте код для запуска второй анимации
-    document.getElementById("animated-svg13").style.display = "none";
+    
     gsap.to(["#image1", "#image2", "#image3"], {
       scale: 4,
       opacity: 0,
@@ -994,11 +959,8 @@ window.onload = function () {
     });
     //console.log(animating);
     if (!animating) {
-      document.getElementById("animated-svg1").style.display = "none";
       document.getElementById("animated-svg12").style.display = "none";
       document.getElementById("intro").style.display = "none";
-
-
     }
   });
   init();
@@ -1080,7 +1042,7 @@ if (mixer !== undefined) {
     if(anim){
       anim.play();
     }
-    ScrollToGetBetterFeeling(5);
+    ScrollToGetBetterFeeling(2);
     //document.getElementById("myBtn").style.visibility = "visible";
     animating = false;
   }
