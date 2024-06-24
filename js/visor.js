@@ -326,7 +326,7 @@ async function loadHeavyModelInBackground() {
   let speed;
   let timeRemaining;
 
-  gltf = await loader.loadAsync('/media/VictoriaEugenia.glb',
+  gltf = await loader.loadAsync('https://festive-ardinghelli.185-118-57-122.plesk.page/media/VictoriaEugenia.glb',
     (xhr) => { // onProgress callback 
       let loaded = xhr.loaded; // get the number of bytes transferred so far
       let total = xhr.total; // get the total number of bytes to be transferred
