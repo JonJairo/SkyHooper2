@@ -4,6 +4,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { GlitchPass } from "three/addons/postprocessing/GlitchPass.js";
+
 import { ShaderPass } from "https://cdn.jsdelivr.net/npm/three@0.149.0/examples/jsm/postprocessing/ShaderPass.js";
 import CameraControls from "https://cdn.jsdelivr.net/npm/camera-controls@1.32.2/dist/camera-controls.module.js";
 
